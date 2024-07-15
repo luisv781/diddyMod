@@ -1,0 +1,24 @@
+{
+  "item.brotha-idk.shit": "Piece of Shit",
+  "item.brotha-idk.green_shit": "Green Piece of Shit",
+
+
+  "block.brotha-idk.potato_block": "Potato Block",
+  "block.brotha-idk.potato_stairs": "Potato Stairs",
+  "block.brotha-idk.potato_slab": "Potato Slab",
+  "block.brotha-idk.potato_button": "Potato Button",
+  "block.brotha-idk.potato_pressure_plate": "Potato Pressure Plate",
+  "block.brotha-idk.potato_fence": "Potato Fence",
+  "block.brotha-idk.potato_fence_gate": "Potato Fence Gate",
+  "block.brotha-idk.potato_wall": "Potato Wall",
+  "block.brotha-idk.potato_door": "Potato Door",
+  "block.brotha-idk.potato_trapdoor": "Potato Trapdoor",
+
+  "block.brotha-idk.diddy_block": "The Downfall of Diddy",
+
+  "sounds.brotha-idk.diddy_block_placed": "diddyyy",
+
+  "tooltip.brotha-idk.diddy_block.tooltip": "§c§lTMZ §rpresents to you...",
+
+  "itemgroup.bruhidk": "Bruhh Idkk"
+}

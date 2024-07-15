@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "brotha-idk:block/potato_pressure_plate"
+    },
+    "powered=true": {
+      "model": "brotha-idk:block/potato_pressure_plate_down"
+    }
+  }
+}

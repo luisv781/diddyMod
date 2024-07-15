@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "brotha-idk:block/potato_slab"
+    },
+    "type=double": {
+      "model": "brotha-idk:block/potato_block"
+    },
+    "type=top": {
+      "model": "brotha-idk:block/potato_slab_top"
+    }
+  }
+}

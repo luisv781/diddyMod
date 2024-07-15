@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "brotha-idk",
+	"version": "${version}",
+	"name": "DIDDY",
+	"description": "go to the diddy party",
+	"authors": [
+		"luis"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/brotha-idk/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.bruhhidk.BrothaIdk"
+		],
+		"client": [
+			"com.bruhhidk.BrothaIdkClient"
+		],
+		"fabric-datagen": [
+			"com.bruhhidk.BrothaIdkDataGenerator"
+		]
+	},
+	"mixins": [
+		"brotha-idk.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
