@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class ModSounds {
 
-    public static final SoundEvent DIDDY_BLOCK_PLACED = registerSoundEvent("diddy_block_placed");
+    public static final SoundEvent DIDDY_SOUND = registerSoundEvent("diddy_block_placed");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(BrothaIdk.MOD_ID, name);

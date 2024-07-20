@@ -29,7 +29,7 @@ public class DiddyBlock extends Block {
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        world.playSound(null, pos, ModSounds.DIDDY_BLOCK_PLACED, SoundCategory.BLOCKS, 1f, 1f);
+        world.playSound(null, pos, ModSounds.DIDDY_SOUND, SoundCategory.BLOCKS, 1f, 1f);
 
         super.onPlaced(world, pos, state, placer, itemStack);
     }
