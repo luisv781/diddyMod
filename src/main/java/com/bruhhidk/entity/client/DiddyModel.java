@@ -1,5 +1,6 @@
 package com.bruhhidk.entity.client;
 
+import com.bruhhidk.entity.animation.ModAnims;
 import com.bruhhidk.entity.custom.DiddyEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
@@ -19,24 +20,30 @@ public class DiddyModel<T extends DiddyEntity> extends SinglePartEntityModel<T> 
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create().uv(0, 0).cuboid(-2.0F, -3.5F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 22.0F, 0.0F));
+        ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 22.0F, 0.0F));
 
-        ModelPartData arm1 = main.addChild("arm1", ModelPartBuilder.create().uv(8, 8).cuboid(-2.5F, -0.4F, -0.5F, 3.0F, 1.0F, 1.0F, new Dilation(-0.2F)), ModelTransform.pivot(-2.0F, -1.8F, 0.0F));
+        ModelPartData head = main.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-2.0F, -3.5F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData arm2 = main.addChild("arm2", ModelPartBuilder.create().uv(0, 8).cuboid(-2.5F, -0.4F, -0.5F, 3.0F, 1.0F, 1.0F, new Dilation(-0.2F)), ModelTransform.pivot(4.0F, -1.8F, 0.0F));
+        ModelPartData arm1 = head.addChild("arm1", ModelPartBuilder.create().uv(8, 8).cuboid(-2.5F, -0.4F, -0.5F, 3.0F, 1.0F, 1.0F, new Dilation(-0.2F)), ModelTransform.pivot(-2.0F, -1.8F, 0.0F));
 
-        ModelPartData leg1 = main.addChild("leg1", ModelPartBuilder.create().uv(0, 10).cuboid(-0.5F, -0.5F, -0.5F, 1.0F, 2.0F, 1.0F, new Dilation(0.0F))
+        ModelPartData arm2 = head.addChild("arm2", ModelPartBuilder.create().uv(0, 8).cuboid(-0.5F, -0.4F, -0.5F, 3.0F, 1.0F, 1.0F, new Dilation(-0.2F)), ModelTransform.pivot(2.0F, -1.8F, 0.0F));
+
+        ModelPartData leg1 = head.addChild("leg1", ModelPartBuilder.create().uv(0, 10).cuboid(-0.5F, -0.5F, -0.5F, 1.0F, 2.0F, 1.0F, new Dilation(0.0F))
                 .uv(4, 10).cuboid(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.0F, 0.5F, 0.0F));
 
-        ModelPartData leg2 = main.addChild("leg2", ModelPartBuilder.create().uv(8, 10).cuboid(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 1.0F, new Dilation(0.0F))
+        ModelPartData leg2 = head.addChild("leg2", ModelPartBuilder.create().uv(8, 10).cuboid(-0.5F, 0.5F, -1.5F, 1.0F, 1.0F, 1.0F, new Dilation(0.0F))
                 .uv(0, 0).cuboid(-0.5F, -0.5F, -0.5F, 1.0F, 2.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(1.0F, 0.5F, 0.0F));
-        return TexturedModelData.of(modelData, 16, 16); //16, 16
+        return TexturedModelData.of(modelData, 16, 16);
     }
     @Override
     public void setAngles(DiddyEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.getPart().traverse().forEach(ModelPart::resetTransform);
+
+        this.animateMovement(ModAnims.frontroll, limbSwing, limbSwingAmount, 2f, 2.5f);
+        //this.updateAnimation(entity.idleAnimationState, ModAnims.frontroll, ageInTicks, 1f);
     }
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) { //float red, float green, float blue, float alpha
+    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
         //main.render(matrices, vertexConsumer, light, overlay);
 
         ImmutableList.of(this.main).forEach((modelPart -> {

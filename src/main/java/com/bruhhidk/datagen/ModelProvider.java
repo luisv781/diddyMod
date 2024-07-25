@@ -37,5 +37,6 @@ public class ModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SHIT, Models.GENERATED);
         itemModelGenerator.register(ModItems.GREEN_SHIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DIDDY_SPAWN_EGG, Models.GENERATED);
     }
 }

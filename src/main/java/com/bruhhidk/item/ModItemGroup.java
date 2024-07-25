@@ -21,6 +21,7 @@ public class ModItemGroup {
                     .icon(() -> new ItemStack(ModItems.SHIT)).entries(((displayContext, entries) -> {
                         entries.add(ModItems.SHIT);
                         entries.add(ModItems.GREEN_SHIT);
+                        entries.add(ModItems.DIDDY_SPAWN_EGG);
 
                         entries.add(ModBlocks.DIDDY_BLOCK);
                         entries.add(ModBlocks.POTATO_BLOCK);
